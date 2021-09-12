@@ -13,11 +13,9 @@
                <div class="page-header">
                   <h2>jQuery Ajax Form Submit Example In PHP</h2>
                </div>
-               <p>Please fill all fields in the form</p>
+                
+               <div id="error"></div>
 
-               <img id="show_message" src="check.png" style="display: none; width:50px;">
-
-               <span id="error"></span>
                <form action="javascript:void(0)" method="post" id="ajax-form">
                   <div class="form-group">
                      <label>Name</label>
@@ -50,8 +48,7 @@
                     type: "POST",
                     url: "upload2.php",
                     data: $(this).serialize(),
-                    success: function() {
-                        $("#show_message").fadeIn();
+                    success: function(data) {
                         $("#ajax-form").hide();
                         $("#error").html(data);
 
